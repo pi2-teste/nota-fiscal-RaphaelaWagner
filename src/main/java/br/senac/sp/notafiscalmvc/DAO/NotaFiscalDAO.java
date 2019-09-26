@@ -16,7 +16,7 @@ public class NotaFiscalDAO {
     private static ArrayList<NotaFiscal> listaNotas = new ArrayList<NotaFiscal>();
     
     public static boolean addNota(NotaFiscal nota) {
-        
+        System.out.println("agora no DAO");
         listaNotas.add(nota);
         System.out.println("Agora lista geral");
         for (int i = 0; i < listaNotas.size(); i++) {
@@ -28,5 +28,13 @@ public class NotaFiscalDAO {
         
         return true;
     }
-
+    
+    public static int conta(){
+        
+        return listaNotas.size();
+    }
+    public static NotaFiscal linha(int i){
+        
+        return ;
+    }
 }

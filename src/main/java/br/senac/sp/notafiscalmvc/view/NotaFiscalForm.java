@@ -5,6 +5,9 @@
  */
 package br.senac.sp.notafiscalmvc.view;
 
+import br.senac.sp.notafiscalmvc.controller.NotaFiscalController;
+import br.senac.sp.notafiscalmvc.model.NotaFiscal;
+
 /**
  *
  * @author lucas
@@ -14,8 +17,11 @@ public class NotaFiscalForm extends javax.swing.JFrame {
     /**
      * Creates new form notaFIscalForm
      */
+    public NotaFiscalController controller;
     public NotaFiscalForm() {
         initComponents();
+        
+        controller = new NotaFiscalController(); 
     }
 
     /**
@@ -27,21 +33,154 @@ public class NotaFiscalForm extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPanel2 = new javax.swing.JPanel();
+        JTabela1 = new javax.swing.JTabbedPane();
+        jAbaListadeNotas = new javax.swing.JPanel();
+        jTextoNumeroDaNota = new javax.swing.JTextField();
+        jTextoValorDaNota = new javax.swing.JTextField();
+        jBotaoSalvar = new javax.swing.JButton();
+        jLabelNumNota = new javax.swing.JLabel();
+        jLabelValor = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 100, Short.MAX_VALUE)
+        );
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        jTextoNumeroDaNota.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextoNumeroDaNotaActionPerformed(evt);
+            }
+        });
+
+        jBotaoSalvar.setText("Salvar");
+        jBotaoSalvar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jBotaoSalvarActionPerformed(evt);
+            }
+        });
+
+        jLabelNumNota.setText("Num nota:");
+
+        jLabelValor.setText("Valor:");
+
+        javax.swing.GroupLayout jAbaListadeNotasLayout = new javax.swing.GroupLayout(jAbaListadeNotas);
+        jAbaListadeNotas.setLayout(jAbaListadeNotasLayout);
+        jAbaListadeNotasLayout.setHorizontalGroup(
+            jAbaListadeNotasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jAbaListadeNotasLayout.createSequentialGroup()
+                .addGap(36, 36, 36)
+                .addGroup(jAbaListadeNotasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabelNumNota)
+                    .addComponent(jLabelValor))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jAbaListadeNotasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jTextoValorDaNota, javax.swing.GroupLayout.DEFAULT_SIZE, 80, Short.MAX_VALUE)
+                    .addComponent(jTextoNumeroDaNota))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jAbaListadeNotasLayout.createSequentialGroup()
+                .addContainerGap(230, Short.MAX_VALUE)
+                .addComponent(jBotaoSalvar)
+                .addGap(80, 80, 80))
+        );
+        jAbaListadeNotasLayout.setVerticalGroup(
+            jAbaListadeNotasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jAbaListadeNotasLayout.createSequentialGroup()
+                .addGap(45, 45, 45)
+                .addGroup(jAbaListadeNotasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextoNumeroDaNota, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelNumNota))
+                .addGap(18, 18, 18)
+                .addGroup(jAbaListadeNotasLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jTextoValorDaNota, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelValor))
+                .addGap(56, 56, 56)
+                .addComponent(jBotaoSalvar)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        JTabela1.addTab("Registrar nota", jAbaListadeNotas);
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(jTable1);
+
+        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
+        jPanel3.setLayout(jPanel3Layout);
+        jPanel3Layout.setHorizontalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+        jPanel3Layout.setVerticalGroup(
+            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 193, Short.MAX_VALUE)
+        );
+
+        JTabela1.addTab("tab2", jPanel3);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(JTabela1)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(JTabela1)
+                .addGap(21, 21, 21))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jBotaoSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBotaoSalvarActionPerformed
+
+        System.out.println("Numero da nota: "+jTextoNumeroDaNota.getText());
+        System.out.println("Valor da Nota: "+jTextoValorDaNota.getText());
+        
+        int numeroNota;
+        double ValorNota;
+        numeroNota = Integer.parseInt(jTextoNumeroDaNota.getText());
+        ValorNota = Double.parseDouble(jTextoValorDaNota.getText());
+        controller.salvar(numeroNota, ValorNota);
+        
+        System.out.println("Agora no controller: " +numeroNota+ValorNota);
+        
+      
+        
+        
+    }//GEN-LAST:event_jBotaoSalvarActionPerformed
+
+    private void jTextoNumeroDaNotaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextoNumeroDaNotaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextoNumeroDaNotaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -80,5 +219,16 @@ public class NotaFiscalForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTabbedPane JTabela1;
+    private javax.swing.JPanel jAbaListadeNotas;
+    private javax.swing.JButton jBotaoSalvar;
+    private javax.swing.JLabel jLabelNumNota;
+    private javax.swing.JLabel jLabelValor;
+    private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel3;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTable jTable1;
+    private javax.swing.JTextField jTextoNumeroDaNota;
+    private javax.swing.JTextField jTextoValorDaNota;
     // End of variables declaration//GEN-END:variables
 }
