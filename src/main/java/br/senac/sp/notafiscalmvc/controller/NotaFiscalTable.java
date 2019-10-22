@@ -1,19 +1,10 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package br.senac.sp.notafiscalmvc.controller;
 
 /**
  *
- * @author lucas
+ * @author Raphaela
  */
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 
 import br.senac.sp.notafiscalmvc.DAO.NotaFiscalDAO;
 import br.senac.sp.notafiscalmvc.model.NotaFiscal;
@@ -24,14 +15,14 @@ import javax.swing.table.AbstractTableModel;
  * @author lucas
  */
 public class NotaFiscalTable extends AbstractTableModel {
-    private String[] columnNames = {"NumNota"," DescriçãoDaNota ","ValNota"};
+    private String[] columnNames = {"NumNota"," DescriçãoDoProduto ","ValNota"};
 
     public int getColumnCount() {
         return 3;
     }
 
     public int getRowCount() {
-        //implementar metodo                    // 3
+        //implementar metodo                    
         return NotaFiscalDAO.conta();
     }
 
@@ -43,10 +34,11 @@ public class NotaFiscalTable extends AbstractTableModel {
         //implementar metodo
         NotaFiscal nota;
         nota = NotaFiscalDAO.linha(row);
+        // Fazer a comparação
         if(col == 0)
             return nota.getNumNota();
         if(col == 1)
-            return nota.getDescricaoNota();
+            return nota.getDescricaoProduto();
             
             return nota.getValNota();
         }

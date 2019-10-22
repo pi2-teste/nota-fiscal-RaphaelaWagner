@@ -10,17 +10,16 @@ import br.senac.sp.notafiscalmvc.model.NotaFiscal;
 
 /**
  *
- * @author lucas
+ * @author Raphaela
  */
 public class NotaFiscalController {
     
-    public static boolean salvar(int numeroNota, String descricaodaNota,double valorNota){
+    public static boolean salvar(int numeroNota, String descricaoProduto,double valorNota){
         System.out.println("Agora estou no controller");
-        
+        // Instanciar
         NotaFiscal NFiscal = new NotaFiscal();
-        
         NFiscal.setNumNota(numeroNota);
-        NFiscal.setDescricaoNota(descricaodaNota);
+        NFiscal.setDescricaoProduto(descricaoProduto);
         NFiscal.setValNota(valorNota);
         
         NotaFiscalDAO dao = new NotaFiscalDAO();

@@ -7,19 +7,20 @@ package br.senac.sp.notafiscalmvc.model;
 
 /**
  *
- * @author lucas
+ * @author Raphaela
  */
 public class NotaFiscal {
+    // Definir variáveis
     double valNota;
-    String descricaoNota;
+    String descricaoProduto;
     int numNota;
     
     public NotaFiscal() {
         System.out.println("inicializando um objeto do tipo NotaFiscal");
     }
     
-    public String getDescricaoNota(){
-        return descricaoNota;
+    public String getDescricaoProduto(){
+        return descricaoProduto;
     }
     
     public double getValNota() {
@@ -42,10 +43,10 @@ public class NotaFiscal {
         this.numNota = numNota;
     }
     
-    public void setDescricaoNota(String descricaoNota){
-        System.out.println("O produto recebeu uma descrição: ");
-        System.out.println(descricaoNota);
-        this.descricaoNota = descricaoNota;
+    public void setDescricaoProduto(String descricaoProduto){
+        System.out.println("O produto recebeu dados: ");
+        System.out.println(descricaoProduto);
+        this.descricaoProduto = descricaoProduto;
     }
     
     

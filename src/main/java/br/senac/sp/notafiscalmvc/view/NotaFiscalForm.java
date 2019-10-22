@@ -10,7 +10,7 @@ import br.senac.sp.notafiscalmvc.controller.NotaFiscalTable; // importei a tabel
 
 /**
  *
- * @author lucas
+ * @author Raphaela
  */
 public class NotaFiscalForm extends javax.swing.JFrame {
 
@@ -171,25 +171,28 @@ public class NotaFiscalForm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jBotaoSalvarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jBotaoSalvarActionPerformed
-
-        System.out.println("Numero da Nota: " + jTextoNumeroDaNota.getText());
-        System.out.println("Descrição da Nota" + jTextoDescricao.getText());
+        // Imprimir dados em tela
+        System.out.println("Número da Nota: " + jTextoNumeroDaNota.getText());
+        System.out.println("Descrição do Produto: " + jTextoDescricao.getText());
         System.out.println("Valor da Nota: " + jTextoValorDaNota.getText());
-
+        
+        // Iniciar variáveis
         int numeroNota;
         double ValorNota;
-        String descricaoNota;
-
+        String descricaoProduto;
+        
+        //Converter dados
         numeroNota = Integer.parseInt(jTextoNumeroDaNota.getText());
-        descricaoNota = (jTextoDescricao.getText());
+        descricaoProduto = (jTextoDescricao.getText());
         ValorNota = Double.parseDouble(jTextoValorDaNota.getText());
-        controller.salvar(numeroNota, descricaoNota, ValorNota);
-
+        controller.salvar(numeroNota, descricaoProduto, ValorNota);
+        
+        //O refresh serve para limpar dados da tabela
         refreshTable();
 
 
     }//GEN-LAST:event_jBotaoSalvarActionPerformed
-
+    // Método que vai limpar os dados
     public void refreshTable() {
         jTable1.invalidate();
         jTable1.repaint();
